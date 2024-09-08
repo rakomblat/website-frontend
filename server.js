@@ -10,6 +10,10 @@ const port = process.env.PORT || 3001; // Use environment variable for port or d
 app.use(cors()); // Use the cors middleware
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
 app.post('/report', (req, res) => {
   const { domain, isp } = req.body;
 
